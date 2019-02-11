@@ -1,28 +1,9 @@
-// Single line comment
-/*
-Multi-line comment
-*/
-
-//alert("Warning! Will Robinson...Warning!");
-//
-//confirm("Do you like pokemon?");
-//
-//prompt("What type of pokemon do you like?");
-
-// function Swamp(){
-// var swamp1 = prompt(You enter a dank swamp);
-
-// var wizardNames = ["Bethazar", "Mordac", "Grendor"];
-// alert("Welcome to , "+wizardNames[0]+"!");
-
 Game();
 
 function Game(){
-    
-    var playerName = prompt("What is your name?");
+var playerName = prompt("What is your name?");
     alert("Welcome to , "+ playerName);
-    
-    Work();
+Work();
     
 // Work Function
     
@@ -40,7 +21,6 @@ function Game(){
                 PhoneCall();
             }
     }
-
 // Phone Call from boss
     
     function PhoneCall(){
@@ -51,7 +31,6 @@ function Game(){
                 FoodVendor();
             }
     }
-    
 // Food vendor
     function FoodVendor(){
         var hungry = prompt("As you continue to drive, you see food vendors on the side of the roads and realize how hungry you are. Do you want to:\n-Stop at a food vendor?\n-Wait until you get home?").toLowerCase();
@@ -78,18 +57,15 @@ function Game(){
             }
     }
     
-    function PhoneCallFoodVendorChoice(){
-        var phonefoodchoice = prompt("Do you want to return to:\n-The phone call?\n-The food vendor?").toLowerCase();
-            if (phonefoodchoice == "phone call" || phonefoodchoice == "the phone call"){
-                CallFromBoss();
-            }
-            else if (phonefoodchoice == "food vendor" || phonefoodchoice == "the food vendor"){
-                VendorOptions();
-            }
-        
-    }
-        
-}
-        
-        
+    function CallVendorChoice(){
+        var callvendorchoice = prompt("Would you like to return to:\n-The phone call?\nThe food vendor?").toLowerCase();
+        if(callvendorchoice == "phone call"){
+            CallFromBoss();
+        }
+        else if(callvendorchoice == "food vendor"){
+            VendorOptions();
+        }
 
+        }
+
+}
