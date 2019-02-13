@@ -53,7 +53,7 @@ Work();
         var follower = prompt("You are now 10 minutes from home. You notice a black sedan that has been following you since you left the food vendor. Do you want to:\n-Speed up?\n-Just keep driving and see if they stop following you?\n-Try to run them off the road?\n-Call the cops?").toLowerCase();
             if(follower == "speed up"){
                 alert("The black sedan speeds up to catch up to you. You start weaving in between cars to try to lose them. They stay right on your tail. You go even faster to try to get away. You look in your rearview mirror to look for the sedan. You can't see it. You look back down to the road and keep driving. All of the sudden, you feel something hit the passenger side of the car. You look over. The black sedan is trying to push you into the median! You try to push back, but the sedan has already caught you off guard. The sedan takes another shot and you end up hitting the cement medians going 110 mph. Everything goes dark.");
-                PhoneCallFoodVendorChoice();
+                CallVendorChoice();
             }
     }
     
