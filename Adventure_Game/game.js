@@ -15,6 +15,17 @@ Multi-line comment
 // var wizardNames = ["Bethazar", "Mordac", "Grendor"];
 // alert("Welcome to , "+wizardNames[0]+"!");
 
+/* switch(insideCastle){
+case "upstairs":
+case "go upstairs":
+case "tale elevator":
+var upstairs = prompt("You walk a long flight of stairs to top floor of the castle.");
+Castle();
+break;
+case "downstairs"
+}
+*/
+
 Game();
 
 function Game(){
@@ -32,13 +43,13 @@ Work();
 // Work Function
     
     function Work(){
-        var work = prompt("It has been a long day at work. You are irritated and nervous. Your boss has been calling people into his office all day. You notice that the people leaving his office don't exactly look happy, and you know there have been rumors about an employee reduction within the company. You become more worried when your boss steps out of his office and calls you in. It's already 5:00. Do you want to:\n-Say that you have an appointment to be to?\n-Go into his office?\n-Start yelling and throwing things around the room?\n-Run out?").toLowerCase();
+        var work = prompt("It has been a long day at work. You are irritated and nervous. Your boss has been calling people into his office all day. You notice that the people leaving his office don't exactly look happy, and you know there have been rumors about an employee reduction within the company. You become more worried when your boss steps out of his office and calls you in. It's already 5:00. Do you want to:\nA. Say that you have an appointment to be to?\nB. Go into his office?\nC. Start yelling and throwing things around the room?\nD. Run out?").toLowerCase();
         
-            if(work == "say that i have an appointment" || work == "say that i have an appointment to be to" || work == "appointment" || work == "say i have an appointment" || work == "appointment to be to" || work == "say i have an appointment to be to"){
+            if(work == "a" || work == "say that i have an appointment to be to" || work == "say i have an appointment to be to" || work == "say i have an appointment" || work == "say that i have an appointment" || work == "appointment"){
                 CallFromBossAppt();
             }
         
-            if(work == "run out" || work == "run" || work == "run away"){
+            else if(work == "run out" || work == "run" || work == "d" || work == "run away"){
                 CallFromBossRun();
             }
         }
@@ -103,10 +114,17 @@ Work();
     function DriveHome(){
         var follower = prompt("You are now 10 minutes from home. You notice a black sedan that has been following you since you left the food vendor. Do you want to:\n-Speed up?\n-Just keep driving and see if they stop following you?\n-Try to run them off the road?\n-Call the cops?").toLowerCase();
             if(follower == "speed up"){
-                alert("The black sedan speeds up to catch up to you. You start weaving in between cars to try to lose them. They stay right on your tail. You go even faster to try to get away. You look in your rearview mirror to look for the sedan. You can't see it. You look back down to the road and keep driving. All of the sudden, you feel something hit the passenger side of the car. You look over. The black sedan is trying to push you into the median! You try to push back, but the sedan has already caught you off guard. The sedan takes another shot and you end up hitting the cement medians going 110 mph. Everything goes dark.");
-                CallVendorChoice();
+                var speedup = prompt("The black sedan speeds up to catch up to you. You start weaving in between cars to try to lose them. You hear sirens. The cops are coming up close on you. Do you:\nA. Go faster\nB. Slow down for the cops.").toLowerCase();
+                if(speedup == "a" || speedup == "go faster" || speedup == "faster"){
+                    alert("You go even faster. The cops speed up. You look through your rearview mirror and can't see the black sedan anymore. All of the sudden, you feel something hit the passenger side of the car. The black sedan is trying to push you into the median! You try to push back, but the sedan has already caught you off guard. The sedan takes another shot and you end up hitting the cement medians going 120 mph. Everything goes dark.");
+                    CallVendorChoice();
+                }
+                
             }
     }
+    
+    function CopChase(){}
+    
     
     function CallVendorChoice(){
         var callvendorchoice = prompt("Would you like to:\n -Return to the phone call\n-Return to the food vendor\n-Quit").toLowerCase();
