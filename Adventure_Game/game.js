@@ -24,6 +24,26 @@ Castle();
 break;
 case "downstairs"
 }
+
+while(!confirm("are you sure you want"+playName+" as a name?)){
+playerName = prompt("What name do you want?");
+}
+
+var inventory ={
+arrows:0;
+maxArrows:100;
+}
+
+var purchase = prompt("welcome to the shop, what would you like to buy?\n-arrows:"+arrowsShop).toLowerCase();
+if(purchase == "arrows" || purchase == "arrow){
+var arrowCon = prompt("How many arrows?");
+
+for(i = 1; i <= arrowCon; i++){
+inventory.arrows ++;
+inventory.coins --;
+console.log("You have "+inventory.arrows+" arrows");
+}
+}
 */
 
 Game();
@@ -52,6 +72,10 @@ Work();
             else if(work == "run out" || work == "run" || work == "d" || work == "run away"){
                 CallFromBossRun();
             }
+            else{
+                alert("I don't know what that means.");
+                Work();
+            }
         }
     function CallFromBossRun(){
         var callfrombossrun = confirm("You don't stop running until you get to your car. Once you get into your car, you wonder if that was really the right decision to make. It seemed kind of crazy. How are you going to go back to work tomorrow after having run out like that? Your phone rings. You look down and see your boss's name on the screen. How do you talk to him after having run out like that? Do you want to answer it?");
@@ -60,19 +84,21 @@ Work();
                 PhoneCallRun();
             }
             else{
-                alert("You let the call go to voicemail. A few seconds later, a voicemail notification pops up on your phone. You decide to listen to it.\n'+playername+...I don't know what happened just barely...Frankly, that was very unprofessional, and I'm confused. If you have a logical explanation, feel free to call me back. If not, don't bother coming to work tomorrow.'\nYou wonder why he didn't just fire you over the phone if he was going to before you ran out. You start to drive home.");
+                alert("You let the call go to voicemail. A few seconds later, a voicemail notification pops up on your phone. You decide to listen to it.\n'+playername+...I don't know what happened just barely...Frankly, that was very unprofessional, and I'm confused. If you have a logical explanation, feel free to call me back. If not, don't bother coming to work tomorrow.'\nYou wonder why he didn't just fire you over the phone if he was going to before you ran out.");
                     FoodVendor();
-                
-                
-            }
+                }
     }
     
     function PhoneCallRun(){
-        var phonecallrun = confirm(""+playername+"? What just happened? That seemed very unprofessional.'");
+        var phonecallrun = confirm("'"+playername+"? What just happened? That seemed very unprofessional. I don't know what to say. I'm sorry for doing this over the phone, but I'm going to have to let you go.'");
         
             if(phonecallrun){
-                alert("'Awesome! I'll send over those details soon!'");
+                alert("Your boss hangs up.");
                 FoodVendor();
+            }
+            else{
+                    alert("'If you can give me a logical explanation, I will consider letting you come back in tomorrow.'");
+                        FoodVendor();
             }
     }
     
@@ -81,6 +107,10 @@ Work();
             if (callfrombossappt){
                 alert("You answer the call. You say 'Hello?'");
                 PhoneCallAppt();
+            }
+            else{
+                alert("'Hey, "+playername+"! I was just calling to let you know that I wanted to offer you a position in the company.'");
+                FoodVendor();
             }
     }
 // Phone Call from boss
@@ -95,31 +125,53 @@ Work();
     }
 // Food vendor
     function FoodVendor(){
-        var hungry = prompt("As you continue to drive, you see food vendors on the side of the roads and realize how hungry you are. Do you want to:\n-Stop at a food vendor?\n-Wait until you get home?").toLowerCase();
-            if(hungry == "stop at a food vendor" || hungry == "stop at a vendor" ||hungry == "food vendor" || hungry == "vendor" || hungry == "food" || hungry == "stop"){
+        var hungry = prompt("You begin to drive home. As you drive, you see food vendors on the side of the roads and realize how hungry you are. Do you want to:\nA. Stop at a food vendor?\nB. Wait until you get home?").toLowerCase();
+            if(hungry == "stop at a food vendor" || hungry == "stop at a vendor" ||hungry == "food vendor" || hungry == "vendor" || hungry == "food" || hungry == "stop" || hungry == "a"){
                 VendorOptions();
-            } 
+            }
+            else if(hungry == "wait" || hungry == "wait until i get home" || hungry == "b"){
+                Home();
+            }
+            else{
+                    alert("I don't know what that means.");
+                    FoodVendor();
+                }
         }
     
     function VendorOptions(){
-        var foodchoice = prompt("You pull off to the side of the road and take a look at your options. Do you want a: \n-hot dog\n-hamburger\n-taco").toLowerCase();
-               if(foodchoice == "hot dog" || foodchoice == "hamburger" || foodchoice == "taco"){
+        var foodchoice = prompt("You pull off to the side of the road and take a look at your options. Do you want a: \nA. hot dog\nB. hamburger\nC. taco").toLowerCase();
+               if(foodchoice == "hot dog" || foodchoice == "hamburger" || foodchoice == "taco" || foodchoice == "a" || foodchoice == "b" || foodchoice == "c"){
                    alert("You finish your "+foodchoice+" before getting back into your car.");
                    DriveHome();
-               } 
+               }
+                else{
+                alert("I don't know what that means.");
+                VendorOptions();
+            }
 
     }
     
 // Drive home w people following
     function DriveHome(){
-        var follower = prompt("You are now 10 minutes from home. You notice a black sedan that has been following you since you left the food vendor. Do you want to:\n-Speed up?\n-Just keep driving and see if they stop following you?\n-Try to run them off the road?\n-Call the cops?").toLowerCase();
-            if(follower == "speed up"){
-                var speedup = prompt("The black sedan speeds up to catch up to you. You start weaving in between cars to try to lose them. You hear sirens. The cops are coming up close on you. Do you:\nA. Go faster\nB. Slow down for the cops.").toLowerCase();
+        var follower = prompt("You are now 10 minutes from home. You notice a black sedan that has been following you since you left the food vendor. Do you want to:\nA. Speed up?\nB. Just keep driving and see if they stop following you?\nC. Try to run them off the road?\nD. Call the cops?").toLowerCase();
+            if(follower == "speed up" || follower == "a"){
+                SpeedUp();
+            }
+            else{
+                alert("I don't know what that means.");
+                DriveHome();
+            }
+    }
+    
+    function SpeedUp(){
+        var speedup = prompt("The black sedan speeds up to catch up to you. You start weaving in between cars to try to lose them. You hear sirens. The cops are coming up close on you. Do you:\nA. Go faster\nB. Slow down for the cops.").toLowerCase();
                 if(speedup == "a" || speedup == "go faster" || speedup == "faster"){
                     alert("You go even faster. The cops speed up. You look through your rearview mirror and can't see the black sedan anymore. All of the sudden, you feel something hit the passenger side of the car. The black sedan is trying to push you into the median! You try to push back, but the sedan has already caught you off guard. The sedan takes another shot and you end up hitting the cement medians going 120 mph. Everything goes dark.");
                     CallVendorChoice();
                 }
-                
+                else{
+                alert("I don't know what that means.");
+                SpeedUp();
             }
     }
     
@@ -127,18 +179,22 @@ Work();
     
     
     function CallVendorChoice(){
-        var callvendorchoice = prompt("Would you like to:\n -Return to the phone call\n-Return to the food vendor\n-Quit").toLowerCase();
-        if(callvendorchoice == "phone call"){
+        var callvendorchoice = prompt("Would you like to:\nA. Return to the phone call\nB. Return to the food vendor\nC. Quit").toLowerCase();
+        if(callvendorchoice == "phone call" || callvendorchoice == "a"){
             CallFromBoss();
         }
-        else if(callvendorchoice == "food vendor"){
+        else if(callvendorchoice == "food vendor" || callvendorchoice == "b"){
             VendorOptions();
         }
 
         
-        else if(callvendorchoice == "quit"){
+        else if(callvendorchoice == "quit" || callvendorchoice == "c"){
            Quit(); 
         }
+        else{
+                alert("I don't know what that means.");
+                CallVendorChoice();
+            }
     }
 
 
