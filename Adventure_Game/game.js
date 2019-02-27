@@ -68,15 +68,68 @@ Work();
             if(work == "a" || work == "say that i have an appointment to be to" || work == "say i have an appointment to be to" || work == "say i have an appointment" || work == "say that i have an appointment" || work == "appointment"){
                 CallFromBossAppt();
             }
-        
-            else if(work == "run out" || work == "run" || work == "d" || work == "run away"){
+            
+            else if(work == "b" || work == "office" || work == "go into his office" || work == "go into office"){
+                alert("You walk into the office.");
+                Office();
+            }
+            else if(work == "c" || work == "yell" || work == "throw things around the room" || work == "yell and throw things around the room"){
+                alert("Everyone goes silent as you yell and throw things around the room. About 30 seconds after you've started, you see security walking through the door. You try to run away, but they catch you and force you to exit the building.")
+                Security();
+            }
+            else if(work == "d" || work == "run out" || work == "run" || work == "run away"){
                 CallFromBossRun();
             }
+            
             else{
                 alert("I don't know what that means.");
                 Work();
             }
         }
+    function CallFromBossAppt(){
+        var callfrombossappt = confirm("On your way home, you wonder how you're going to handle work tomorrow. Should you call in sick? Or are you going to go back to work and just face it? You're thinking about this when you get a call from your boss. Do you answer it?");
+            if (callfrombossappt){
+                alert("You answer the call. You say 'Hello?'");
+                PhoneCallAppt();
+            }
+            else{
+                alert("'Hey, "+playername+"! I was just calling to let you know that I wanted to offer you a position in the company.'");
+                FoodVendor();
+            }
+    }
+    
+    function Office(){
+        var jobposition = prompt("Once you are seated, your boss begins to talk about cutting costs within the company. Your palms get sweaty. Then, he surprises you. He says 'We are cutting costs, but we are also improving management. I would like to offer you my job. I will be moving to HQ. What do you think?'\nA. Yes!\nB. No!").toLowerCase();
+        
+        if(jobposition == "a" || jobposition == "yes" || jobposition == "yes!"){
+            alert("'Great! You'll start next week. In the meantime, I will be training you.' He shakes your hand before you leave.");
+            
+        }
+        else if(jobposition == "b" || jobposition == "no" || jobposition == "no."){
+            alert("'Okay...I'm sorry to hear that. Let me know if you change your mind. I will have to know by tomorrow. Have a good day.'");
+            
+        }
+        else{
+                alert("I don't know what that means.");
+                Office();
+            }
+        
+    }
+    
+    function Security(){
+        var security = alert("That was embarrassing. You begin to head home.");
+    }
+    
+// Phone Call from boss
+    
+    function PhoneCallAppt(){
+        var phonecallappt = confirm("'Hey, "+playername+"! I'm sorry if I'm interrupting your appointment. This just couldn't wait! I wanted to offer you a position in the company. I think you'd be perfect for it, and I was hoping to have an answer by tomorrow morning. I'll email over the details of the position. Sound good?'");
+        
+            if(phonecallappt){
+                alert("'Awesome! I'll send over those details soon!'");
+                FoodVendor();
+            }
+    }
     function CallFromBossRun(){
         var callfrombossrun = confirm("You don't stop running until you get to your car. Once you get into your car, you wonder if that was really the right decision to make. It seemed kind of crazy. How are you going to go back to work tomorrow after having run out like that? Your phone rings. You look down and see your boss's name on the screen. How do you talk to him after having run out like that? Do you want to answer it?");
             if (callfrombossrun){
@@ -102,34 +155,13 @@ Work();
             }
     }
     
-    function CallFromBossAppt(){
-        var callfrombossappt = confirm("On your way home, you wonder how you're going to handle work tomorrow. Should you call in sick? Or are you going to go back to work and just face it? You're thinking about this when you get a call from your boss. Do you answer it?");
-            if (callfrombossappt){
-                alert("You answer the call. You say 'Hello?'");
-                PhoneCallAppt();
-            }
-            else{
-                alert("'Hey, "+playername+"! I was just calling to let you know that I wanted to offer you a position in the company.'");
-                FoodVendor();
-            }
-    }
-// Phone Call from boss
-    
-    function PhoneCallAppt(){
-        var phonecallappt = confirm("'Hey, "+playername+"! I'm sorry if I'm interrupting your appointment. This just couldn't wait! I wanted to offer you a position in the company. I think you'd be perfect for it, and I was hoping to have an answer by tomorrow morning. I'll email over the details of the position. Sound good?'");
-        
-            if(phonecallappt){
-                alert("'Awesome! I'll send over those details soon!'");
-                FoodVendor();
-            }
-    }
 // Food vendor
     function FoodVendor(){
         var hungry = prompt("You begin to drive home. As you drive, you see food vendors on the side of the roads and realize how hungry you are. Do you want to:\nA. Stop at a food vendor?\nB. Wait until you get home?").toLowerCase();
-            if(hungry == "stop at a food vendor" || hungry == "stop at a vendor" ||hungry == "food vendor" || hungry == "vendor" || hungry == "food" || hungry == "stop" || hungry == "a"){
+            if(hungry == "a" || hungry == "stop at a food vendor" || hungry == "stop at a vendor" ||hungry == "food vendor" || hungry == "vendor" || hungry == "food" || hungry == "stop"){
                 VendorOptions();
             }
-            else if(hungry == "wait" || hungry == "wait until i get home" || hungry == "b"){
+            else if(hungry == "b" || hungry == "wait" || hungry == "wait until i get home"){
                 Home();
             }
             else{
@@ -154,9 +186,13 @@ Work();
 // Drive home w people following
     function DriveHome(){
         var follower = prompt("You are now 10 minutes from home. You notice a black sedan that has been following you since you left the food vendor. Do you want to:\nA. Speed up?\nB. Just keep driving and see if they stop following you?\nC. Try to run them off the road?\nD. Call the cops?").toLowerCase();
-            if(follower == "speed up" || follower == "a"){
+            if(follower == "a" || follower == "speed up"){
                 SpeedUp();
             }
+            else if(follower == "b" || follower == "keep driving"){}
+                
+            else if(follower == "c" || follower == "try to run them off the road" || follower == "run them off of the road" || follower == "run them off the road" || follower == "try to run them off of the road"){}
+            else if(follower == "d" || follower == "call cops" || follower == "call the cops"){}
             else{
                 alert("I don't know what that means.");
                 DriveHome();
@@ -169,6 +205,8 @@ Work();
                     alert("You go even faster. The cops speed up. You look through your rearview mirror and can't see the black sedan anymore. All of the sudden, you feel something hit the passenger side of the car. The black sedan is trying to push you into the median! You try to push back, but the sedan has already caught you off guard. The sedan takes another shot and you end up hitting the cement medians going 120 mph. Everything goes dark.");
                     CallVendorChoice();
                 }
+                
+                else if(speedup == "b" || speedup == "slow down" || speedup == "slow down for the cops" || speedup == "slow down for cops"){}
                 else{
                 alert("I don't know what that means.");
                 SpeedUp();
@@ -180,15 +218,15 @@ Work();
     
     function CallVendorChoice(){
         var callvendorchoice = prompt("Would you like to:\nA. Return to the phone call\nB. Return to the food vendor\nC. Quit").toLowerCase();
-        if(callvendorchoice == "phone call" || callvendorchoice == "a"){
+        if(callvendorchoice == "a" || callvendorchoice == "phone call"){
             CallFromBoss();
         }
-        else if(callvendorchoice == "food vendor" || callvendorchoice == "b"){
+        else if(callvendorchoice == "b" || callvendorchoice == "food vendor"){
             VendorOptions();
         }
 
         
-        else if(callvendorchoice == "quit" || callvendorchoice == "c"){
+        else if(callvendorchoice == "c" || callvendorchoice == "quit"){
            Quit(); 
         }
         else{
