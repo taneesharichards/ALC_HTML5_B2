@@ -46,11 +46,21 @@ console.log("You have "+inventory.arrows+" arrows");
 }
 */
 
+var inventory ={
+flashlight:0,
+maxFlashlight:1,
+bat:0,
+maxBat:1,
+kitchenknife:0,
+maxkitchenKnife:1,
+}
+
+
 Game();
 
 function Game(){
 var playername = prompt("What is your name?");
-var readytoplay = confirm ("Welcome to , "+ playername +". Are you ready to play?");
+var readytoplay = confirm ("Welcome to The Job, "+ playername +". Are you ready to play?");
     if(readytoplay){
         Work();
     }
@@ -170,9 +180,39 @@ Work();
                 }
         }
     
+   function Home(){
+        alert("When you get home, you sit on your couch and watch TV");
+        var breakin = prompt("You wake up to the sound of breaking glass. The TV is still on. You look at the clock. It's been an hour since you've gotten home. You get off of your couch and try to find something to help you investigate the broken glass. You know where a bat, a flashlight, and a kitchen knife are. The problem is, they're all in different areas of the house. Which one do you want to go for?\n-Bat\n-Flashlight\n-Kitchen knife").toLowerCase();
+        
+        switch(breakin){
+        case "bat":
+        var bat = alert("You start to walk to your bedroom to get your bat.");
+                confirm("You get to your bedroom and you can see the bat with the moonlight shining in through your window. Do you pick it up?");
+                if(bat){
+                    alert("You pick up the bat and begin to leave your room.");
+                }
+                else{
+                    alert("You decide to leave the bat. You begin to leave the room.");
+                    var noBat = prompt("Do you want to try to grab the flashlight? the kitchen knife? or do you want to stay bare-handed?\n-Flashlight\n-Kitchen knife\n-Nothing").toLowerCase();
+                    switch(noBat){
+                        case "flashlight":
+                            var flashlight = alert("You work your way to the garage where you know you have a heavy-duty flashlight.");
+                            confirm("When you get to the garage, you find the flashlight. Do you pick it up?");
+                            if(flashlight){
+                                
+                            }
+                    }
+                }
+        break;
+        case "flashlight":
+        }
+        
+        case "kitchen knife":
+    }
+    
     function VendorOptions(){
-        var foodchoice = prompt("You pull off to the side of the road and take a look at your options. Do you want a: \nA. hot dog\nB. hamburger\nC. taco").toLowerCase();
-               if(foodchoice == "hot dog" || foodchoice == "hamburger" || foodchoice == "taco" || foodchoice == "a" || foodchoice == "b" || foodchoice == "c"){
+        var foodchoice = prompt("You pull off to the side of the road and take a look at your options. Do you want a: \n-Hot dog\n-Hamburger\n-Taco").toLowerCase();
+               if(foodchoice == "hot dog" || foodchoice == "hamburger" || foodchoice == "taco"){
                    alert("You finish your "+foodchoice+" before getting back into your car.");
                    DriveHome();
                }
@@ -237,15 +277,22 @@ Work();
 
 
     function Quit(){
-        var quit = confirm("Are you sure want to quit?")
-
-        if(quit){
+        while(confirm("Are you sure you want to quit?")){
             alert("You have chosen to quit the game.");
             Game();
         }
-        else{
+        while(!confirm("Are you sure you want to quit?")){
             CallVendorChoice();
-        }
+//        var quit = confirm("Are you sure want to quit?")
+//
+//        if(quit){
+//            alert("You have chosen to quit the game.");
+//            Game();
+//        }
+//        else{
+//            CallVendorChoice();
+//        }
     }
     
+}
 }
