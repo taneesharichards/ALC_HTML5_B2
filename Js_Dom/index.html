@@ -1,15 +1,36 @@
 <!DOCTYPE html>
 <html>
     <body>
-        <h2>My First Page</h2>
-        <p id="demo">Good Morning - Bilbo Baggins</p>
-        <script>document.getElementById("demo").innerHTML = "Hello World!";</script>
+        <h2 id="h2">HERSHEY'S MILK CHOCOLATE</h2>
+        <p id="p1">Click a button to either wrap or unwrap the chocolate bar!</p>
         
-        <button onclick="document.getElementById('myImage').src='media/IceCreamCone.png'" style="width:100px">Scoop the ice cream!</button>
         
-        <img id="myImage" src="media/IceCreamCone.png" style="width:100px">
+        <div id="container"> <button id="wrap" onclick="document.getElementById('myImage').src='media/hersheys.png'" style="width:100px">Wrap the chocolate bar</button>
         
-        <button onclick="document.getElementById('myImage').src='media/waffleCone.png'" style="width:100px">Knock the ice cream out of the cone</button>
+        <img id="myImage" src="media/hersheys.png" style="width:200px">
+        
+        <button id="unwrap" onclick="document.getElementById('myImage').src='media/hersheys-unwrapped.jpeg'" style="width:100px">Unwrap the chocolate bar</button>
     
+        </div>
+        <script>
+            document.getElementById("h2").style.color = "#cdcece";
+            document.getElementById("h2").style.fontFamily = "Arial";
+            document.getElementById("h2").style.fontSize = "50px";
+            document.getElementById("h2").style.textAlign = "center";
+            document.getElementById("p1").style.fontSize = "20px";
+            document.getElementById("p1").style.color = "#9fc1d0";
+            document.getElementById("p1").style.textAlign = "center";
+            document.getElementById("p1").style.fontFamily = "Arial";
+            document.getElementById("wrap").style.color = "#7c7c7c";
+            document.getElementById("wrap").style.fontFamily = "Arial";
+            document.getElementById("wrap").style.fontSize = "14px";
+            document.getElementById("wrap").style.textAlign = "center";
+            document.getElementById("unwrap").style.color = "#7c7c7c";
+            document.getElementById("unwrap").style.fontFamily = "Arial";
+            document.getElementById("unwrap").style.fontSize = "14px";
+            document.getElementById("unwrap").style.textAlign = "center";
+            document.getElementById("container").style.textAlign = "center";
+            
+        </script>
     </body>
 </html>
