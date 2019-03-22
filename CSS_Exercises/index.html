@@ -9,6 +9,7 @@
                 margin:0;
             }
             h1{
+                margin:auto;
                 position:relative;
                 color:lightslategray;
                 font-family: 'BenchNine', sans-serif;
@@ -22,6 +23,7 @@
                 text-shadow: 1px .5px .5px #a3a3a3;
             }
             h3{
+                margin:auto;
                 position:relative;
                 color:#dbc5db;
                 font-family: 'BenchNine', sans-serif;
@@ -31,11 +33,74 @@
                 margin:5px 0px 5px 17px;
                 text-shadow: .1px .1px .1px #a3a3a3;
             }
+            
+            div#box{
+                margin:auto;
+                background-color:#c9c9c9;
+                width:50px;
+                height:50px;
+/*                border: solid 10px #c9c9c9;*/
+                border-radius: 0%;
+                position: relative;
+                align-self: center;
+                top: 50px;
+            }
+            
+            div#circle{
+                margin:auto;
+                background-color:#97abbf;
+                width:50px;
+                height:50px;
+                border-radius: 100%;
+                position: relative;
+                top: 100px;
+            }
+            
+            
+            div#triangle{
+                margin:auto;
+                background-color:transparent;
+                width:0px;
+                height:0px;
+                border-left: solid 35px transparent;
+                border-right: solid 35px transparent;
+                border-bottom: solid 45px #ded2de;
+                border-radius: 0%;
+                position: relative;
+                top: 150px;
+                
+            }
+            img#hamburger{
+                margin:auto;
+                display:block;
+                width: 200px;
+                height: auto;
+                border-radius:50%;
+/*                border:dotted 2px #c3c3c3;*/
+                position:relative;
+                align-items: center;
+                align-content:center;
+                z-index:1;
+                transition: .5s;
+                
+/*
+                left: 38.5%;
+                top: 20%;
+*/
+                
+            }
+            img#hamburger:hover{
+                width:400px;
+            }
         </style>
     </head>
     <body>
         <h1>CSS EXERCISES</h1>
         <h3>VOL. 1</h3>
+        <img src="Media/hamburger-recipe-shutterstock-recipe.jpg" id="hamburger">
         
+        <div id="box"></div>
+        <div id="circle"></div>
+        <div id="triangle"></div>
     </body>
 </html>
