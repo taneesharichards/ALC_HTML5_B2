@@ -9,11 +9,67 @@ html, body, div, h1, h2, h3, h4, h5, h6, p, ul, ol, li, header, footer, nav{
 
 /* Universal Style */
 body{
-    background-color:floralwhite;
+    background-color:#dbdfe2;
 }
 div#container{
     width:1200px;
     height:800px;
-    background-color:#ebf1f4;
+    background-color:#e5e5e5;
 }
+
+header{
+    width:95.8%;
+    padding:25px;
+    background-color: #fcfcfc;
+}
+
+header h1{
+    color:#c0d1db;
+    font-family: 'Quicksand', sans-serif;
+    text-align: center;
+    font-size:175%;
+
+}
+
+div#content{
+    width: 100%;
+    background-color: #dddddd;
+}
+
+nav{
+    width:100%;
+    background-color:#c9d3d9;
+}
+
+nav ul{
+    display:block;
+    margin:auto;
+    color:#fff;
+    font-family: 'Quicksand', sans-serif;
+    
+}
+
+nav ul li{
+    float:left;
+    padding: 5px 15px;
+}
+
+.keepopen{
+    clear:both;
+}
+
+div#content h3{
+    padding: 15px;
+    color: #8ca8b9;
+    font-family: 'Quicksand', sans-serif;
+    text-align: center;
+}
+
+div#content p{
+    padding: 15px;
+    color: #6e8895;
+    font-family: 'Quicksand', sans-serif;
+    text-align: center;
+}
+
 
