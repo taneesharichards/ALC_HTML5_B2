@@ -9,22 +9,21 @@ html, body, div, h1, h2, h3, h4, h5, h6, p, ul, ol, li, header, footer, nav{
 
 /* Universal Style */
 body{
-    background-color:#dbdfe2;
+    background-color:#dedede;
 }
 div#container{
-    width:1200px;
-    height:800px;
-    background-color:#e5e5e5;
+    width:100%;
+    background-color:#eaeaea;
 }
 
 header{
-    width:95.8%;
+    width:100%;
     padding:25px;
-    background-color: #fcfcfc;
+    background-color: #fafafa;
 }
 
 header h1{
-    color:#c0d1db;
+    color:#8ec9d1;
     font-family: 'Quicksand', sans-serif;
     text-align: center;
     font-size:175%;
@@ -33,12 +32,12 @@ header h1{
 
 div#content{
     width: 100%;
-    background-color: #dddddd;
+    background-color: #dedede;
 }
 
 nav{
     width:100%;
-    background-color:#c9d3d9;
+    background-color:#94c7ce;
 }
 
 nav ul{
@@ -46,30 +45,61 @@ nav ul{
     margin:auto;
     color:#fff;
     font-family: 'Quicksand', sans-serif;
+    list-style: none;
     
 }
 
-nav ul li{
+nav ul li a{
     float:left;
     padding: 5px 15px;
+    display:block;
+    border-right: 1px solid #c6c6c6;
+    color:#fff;
+    text-decoration:none;
 }
 
-.keepopen{
-    clear:both;
+nav ul li a:hover{
+    background-color:#9fb7ba;
+    color:#efefef;
+}
+
+footer{
+    position:absolute;
+    bottom:0;
+    left:0;
+    width:100%;
+    height: 30px;
+    background-color: #acacac;
 }
 
 div#content h3{
     padding: 15px;
-    color: #8ca8b9;
+    color: #ffffff;
     font-family: 'Quicksand', sans-serif;
     text-align: center;
 }
 
 div#content p{
     padding: 15px;
-    color: #6e8895;
+    color: #9fb7ba;
     font-family: 'Quicksand', sans-serif;
     text-align: center;
 }
+
+div.keepOpen{
+    clear:both;
+}
+
+@media screen and (max-width: 600px){
+    div#container{
+        width:100%;
+    }
+    
+    nav ul li a{
+        float:none;
+        text-align:center;
+    }
+}
+
 
 
