@@ -131,5 +131,23 @@ figure.product figcaption{
     font-size:24px;
 }
 
+@media screen and (max-width: 600px){
+    figure.product{
+        float:none;
+        margin:10px;
+        min-width:80%;
+        max-width:80%;
+        background-color: cadetblue;
+        border-radius:5%;
+    }
+    
+    legend,span,input,textarea{
+        display:block;
+        margin:auto;
+        text-align:center;
+        font-family: 'Quicksand', sans-serif;
+        color:#8ec9d1;
+    }
+    }
 
 
