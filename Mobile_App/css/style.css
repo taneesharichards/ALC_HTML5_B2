@@ -9,16 +9,16 @@ html, body, div, h1, h2, h3, h4, h5, h6, p, ul, ol, li, header, footer, nav{
 
 /* Universal Style */
 body{
-    background-color:#dedede;
+    background-color:#f5f5f5;
 }
 div#container{
     width:100%;
-    background-color:#eaeaea;
+    background-color:#f5f5f5;
 }
 
 header{
     width:100%;
-    padding:25px;
+    padding:20px 0px 20px 0px;
     background-color: #fafafa;
 }
 
@@ -32,7 +32,8 @@ header h1{
 
 div#content{
     width: 100%;
-    background-color: #dedede;
+    background-color: #fffcfc;
+
 }
 
 nav{
@@ -74,7 +75,7 @@ footer{
 
 div#content h3{
     padding: 15px;
-    color: #ffffff;
+    color: #cecece;
     font-family: 'Quicksand', sans-serif;
     text-align: center;
 }
@@ -130,6 +131,14 @@ figure.product figcaption{
     font-family: 'Quicksand', sans-serif;
     font-size:24px;
 }
+
+legend,span,input,textarea{
+        display:block;
+        margin:auto;
+        text-align:left;
+        font-family: 'Quicksand', sans-serif;
+        color:#8ec9d1;
+    }
 
 @media screen and (max-width: 600px){
     figure.product{
